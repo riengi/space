@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
+import Articles from 'components/Articles'
+
 
 const Container = styled.div`
   padding: 0 2rem;
@@ -29,9 +31,9 @@ const Footer = styled.footer`
   }
   `
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <Container className={styles.container}>
+    <Container>
       <Head>
         <title>Space</title>
         <meta name="description" content="Space" />
@@ -39,7 +41,7 @@ export default function Home() {
       </Head>
 
       <Main>
-        Main
+        < Articles data={props.data} />
       </Main>
 
       <Footer>
@@ -47,4 +49,14 @@ export default function Home() {
       </Footer>
     </Container>
   )
+}
+
+// SSR, must be called in page, proopagated further via props
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3000/api/articles');
+  const data = await res.json();
+
+  console.log(data);
+
+  return { props: { data }}
 }
