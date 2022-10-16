@@ -6,3 +6,8 @@ body {
   background-color: white;
 }
 
+/* remove standard decoration of link */
+a, :link,:visited,:hover, :active {
+  text-decoration: none;
+  color: black;
+}
