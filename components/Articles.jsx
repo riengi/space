@@ -1,15 +1,19 @@
 // Articles component
+import styled from 'styled-components'
+
+const Article = styled.div`
+padding: 10px;
+`
 
 export default function Articles(props) {
 
     const articles = props.data.map((article, index) => {
-        return <div key={index}>{article.name}</div>
+        return <Article key={index}>{article.name}</Article>
     });
 
-    return (    
+    return (
         <div>
             {articles}
         </div>
     )
-
 }
