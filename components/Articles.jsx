@@ -18,7 +18,7 @@ export default function Articles(props) {
             pathname: ROUTE_POST_ID,
             query: {id: article.id}
         }}>
-        <a><Article key={index}>{article.name}</Article></a></Link>
+        <Article key={index}>{article.name}</Article></Link>
     });
 
     return (
