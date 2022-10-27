@@ -16,9 +16,9 @@ export default function Articles(props) {
     const articles = props.data.map((article, index) => {
         return <Link key={index} href={{
             pathname: ROUTE_POST_ID,
-            query: {id: article.id}
+            query: { id: article.id }
         }}>
-        <Article key={index}>{article.name}</Article></Link>
+            <Article key={index}>{article.name}</Article></Link>
     });
 
     return (
