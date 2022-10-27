@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import styled from 'styled-components'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-
+import Head from "next/head";
+import styled from "styled-components";
+import Header from "components/Header";
+import Footer from "components/Footer";
 
 const Container = styled.div`
   padding: 0;
@@ -10,35 +9,33 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-`
+`;
 
 const CItem = styled.div`
   padding: 10px;
-  margin: 10px
-`
+  margin: 10px;
+`;
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
-    <Container>
-      <Head>
-        <title>Space</title>
-        <meta name="description" content="Space" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <CItem>
-        <Header />
-      </CItem>
+      <Container>
+        <Head>
+          <title>Space</title>
+          <meta name="description" content="Space" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <CItem>
-        {children}
-      </CItem>
+        <CItem>
+          <Header />
+        </CItem>
 
-      <CItem>
-        <Footer />
-      </CItem>
-    </Container>
+        <CItem>{children}</CItem>
+
+        <CItem>
+          <Footer />
+        </CItem>
+      </Container>
     </>
-  )
+  );
 }
