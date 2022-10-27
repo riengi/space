@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link'
 
 const Header = styled.header`
 background-color: darkmagenta;
@@ -9,5 +10,5 @@ border-radius: 2px;
 `
 
 export default () => {
-    return <Header>Space</Header>
+    return <Link href="/"><Header>Space</Header></Link>
 }
